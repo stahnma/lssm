@@ -1,2 +1,7 @@
 Trying to make a 2.0 iteration of my LDAP self service tool.
 
+
+Use:
+  activeldap
+  sinatra
+

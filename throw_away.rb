@@ -16,7 +16,7 @@ end
 
 admin='stahnma'
     ActiveLdap::Base.setup_connection(
-      :host => 'odin.websages.com',
+      :host => 'freyr.websages.com',
       :port => 636,
       :method => :ssl,
       :base => 'dc=websages,dc=com',
@@ -24,5 +24,12 @@ admin='stahnma'
       :password => ENV['LDAP_PASSWORD'],
       :allow_anonymous => false)
 
-all_users = User.find(:all, '*')
-p all_users
+#all_users = User.find(:all, '*')
+#p all_users
+
+stahnma = User.find('stahnma')
+stahnma.gecos = [ 'Michael Stahnke'] 
+stahnma.cn = [ 'Michael Stahnke' , 'stahnma' ] 
+stahnma.save
+
+p stahnma
