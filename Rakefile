@@ -3,12 +3,19 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 require 'spec/rake/spectask'
 
+
+
 desc 'Default: run specs.'
 task :default => :spec
 
 desc 'Test lssm .'
 Spec::Rake::SpecTask.new('spec') do |t|
   t.spec_files = FileList['spec/**/*_spec.rb']
+end
+
+desc 'Testing Web Server'
+task :web do 
+  sh "shotgun app.rb"
 end
 
 desc 'Test lssm.'
