@@ -5,9 +5,5 @@ require 'erb'
 
 
 get '/' do 
-  "moo"
+  erb :login
 end
-
-
-
-
