@@ -15,7 +15,7 @@ end
 
 desc 'Testing Web Server'
 task :web do 
-  sh "shotgun app.rb"
+  sh "shotgun -o 0.0.0.0 app.rb"
 end
 
 desc 'Test lssm.'
