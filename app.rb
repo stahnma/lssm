@@ -1,23 +1,22 @@
-#!/usr/bin/env ruby 
+#!/usr/bin/env ruby
 #
 require 'sinatra'
 require 'erb'
 
 enable :sessions
 
-get '/' do 
+get '/' do
   puts session['username']
   unless session['username']
     redirect '/login'
   end
 end
 
-get '/login' do 
+get '/login' do
   erb :login
 end
 
-post '/login' do 
-  
+post '/login' do
   #p params
   session['username'] = params['login']
   session['password'] = params['password']
